@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Fortune Wheel</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-top">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let b of brands" class="nav-item " [routerLinkActive]="['active']"><a routerLink="/prizes/{{b}}" class="nav-link ">{{b}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+

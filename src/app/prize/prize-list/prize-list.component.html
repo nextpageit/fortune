@@ -1,0 +1,36 @@
+
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Prize Name</th>
+        <th>Prize Type</th>
+        <th>Prize Probability</th>
+        <th>Prize Spots</th>
+        <th>Last Log User</th>
+        <th>Last Log Time</th>
+        <th class="small">Log History</th>
+        <th class="small">Edit</th>
+        <th class="small">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prize of prizes" >
+        <td>{{prize.prize_value}}</td>
+        <td>{{prize.prize_type}}</td>
+        <td>{{prize.prize_probability}}</td>
+        <td>{{prize.prize_spots}}</td>
+        <td>{{prize.log_user}}</td>
+        <td>{{prize.log_time | date:'short'}}</td>
+
+        <td><a data-toggle="modal" data-target="#myModal" (click)="logs(prize._id)"><i class="fa fa-history" aria-hidden="true"></i></a></td>
+        <td><a (click)="onEdit(prize)"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+        <td><a (click)="destroy(prize)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
